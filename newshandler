@@ -1,0 +1,11 @@
+package handlers
+
+import "github.com/karldoenitz/Tigo/TigoWeb"
+
+type NewsHandler struct {
+    TigoWeb.BaseHandler
+}
+
+func (n *NewsHandler) Get() {
+    // Your code here
+}
