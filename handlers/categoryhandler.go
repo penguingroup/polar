@@ -15,7 +15,7 @@ func (c *CategoryHandler) Get() {
 	data, isFound := redis.Get(global.CATEGORY_REDIS_KEY)
 	if !isFound {
 		result := []global.Category{
-			{1, "beijing", "北京"},
+			{1, "hot", "热点"},
 		}
 		c.ResponseAsJson(global.RespSuccess(result))
 		return
