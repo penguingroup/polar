@@ -1,0 +1,8 @@
+mode : dev  # 运行模式 test  production
+debug : off   # debug 模式是否开启
+signinkey: OTRhMjE3YmEzMjI5MDE2ZjFjN2M4Njg5
+session_expire: 3600
+token_expirt: 3600
+version: 0.9.1
+defence_user_agent: #根据User-Agent请求头过滤
+#  - Mozilla

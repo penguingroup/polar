@@ -1,0 +1,7 @@
+ip: 0.0.0.0
+port: 8080
+log:
+  trace: /etc/smartlog/trace.log
+  info: /etc/smartlog/run.log
+  warning: /etc/smartlog/run.log
+  error: /etc/smartlog/run.log

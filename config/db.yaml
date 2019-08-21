@@ -1,0 +1,23 @@
+dev:
+  redis:
+    ip: 127.0.0.1
+    port: 6379
+    maxidle: 3     # 空闲进程数
+    timeout: 100   # 超时时间
+    auth:
+    select: 1
+test:
+  redis:
+    name_service: test
+    maxidle: 3     # 空闲进程数
+    timeout: 100   # 超时时间
+    auth:
+production:
+  redis:
+    ip: production
+    port: 6379
+    pwd: production
+    maxidle: 3     # 空闲进程数
+    timeout: 100   # 超时时间
+    auth:
+    select: 1
