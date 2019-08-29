@@ -6,12 +6,18 @@ dev:
     timeout: 100   # 超时时间
     auth:
     select: 1
+  es:
+    ip: 127.0.0.1
+    port: 9200
 test:
   redis:
     name_service: test
     maxidle: 3     # 空闲进程数
     timeout: 100   # 超时时间
     auth:
+  es:
+    ip: 127.0.0.1
+    port: 9200
 production:
   redis:
     ip: production
@@ -21,3 +27,6 @@ production:
     timeout: 100   # 超时时间
     auth:
     select: 1
+  es:
+    ip: 127.0.0.1
+    port: 9200
