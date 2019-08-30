@@ -41,7 +41,7 @@ func initES() {
 	var ip, port string
 	ip = esConf["ip"]
 	port = esConf["port"]
-	addr := fmt.Sprintf("%s:%s", ip, port)
+	addr := fmt.Sprintf("http://%s:%s", ip, port)
 	client, err := elastic.NewClientFromConfig(&config.Config{
 		URL: addr,
 	})

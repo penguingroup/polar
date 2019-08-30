@@ -12,13 +12,17 @@ type NewsHandler struct {
 }
 
 func (n *NewsHandler) Get() {
-	param := global.NewsRequest{}
-	if err := n.CheckJsonBinding(&param); err != nil {
+	param := &global.NewsRequest{}
+	if err := n.CheckUrlParamBinding(param); err != nil {
 		n.ResponseAsJson(global.RespIllegal(err.Error()))
 		return
 	}
-	result, total := services.GetNews(param.City, param.Category, param.Page, param.Size)
-	response := utils.PageBuilder(result, param.Page, total)
+	result, _, err := services.GetNews(param.City, param.Category, param.Page, param.Size)
+	if err != nil {
+		n.ResponseAsJson(global.RespServerError(err.Error()))
+		return
+	}
+	response := utils.PageBuilder(result, param.Page, param.Size)
 	n.ResponseAsJson(global.RespSuccess(response))
 	return
 }

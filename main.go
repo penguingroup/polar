@@ -9,6 +9,8 @@ import (
 var urls = []TigoWeb.Router{
 	{"/ping", &handlers.PingHandler{}, nil},
 	{"/api/header/category", &handlers.CategoryHandler{}, nil},
+	{"/api/header/city", &handlers.CityHandler{}, nil},
+	{"/api/body/news", &handlers.NewsHandler{}, nil},
 }
 
 func main() {

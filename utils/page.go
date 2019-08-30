@@ -13,8 +13,8 @@ func PageBuilder(data interface{}, page, total int64) map[string]interface{} {
 		pageSize := vField.Len()
 		result["page_info"] = map[string]int64{
 			"page":  page,            // 当前页数
-			"size":  int64(pageSize), // 当前每页请求的条数
-			"total": total,           // 总数
+			"count": int64(pageSize), // 当前每页请求的条数
+			"size":  total,           // 总数
 		}
 		result["data_list"] = data
 	}

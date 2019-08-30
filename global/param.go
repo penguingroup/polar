@@ -13,8 +13,8 @@ type City struct {
 }
 
 type NewsRequest struct {
-	City     string `json:"city" required:"true"`
-	Category string `json:"category" required:"true"`
-	Page     int64  `json:"page" required:"true"`
-	Size     int64  `json:"size" required:"true" default:"10"`
+	City     string `json:"city" form:"city" required:"true"`
+	Category string `json:"category" form:"category" required:"true"`
+	Page     int64  `json:"page" form:"page" required:"true"`
+	Size     int64  `json:"size" form:"size" required:"true" default:"10"`
 }
