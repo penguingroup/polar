@@ -1,5 +1,5 @@
 ip: 0.0.0.0
-port: 8080
+port: 8088
 log:
   trace: /etc/smartlog/trace.log
   info: /etc/smartlog/run.log

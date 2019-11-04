@@ -12,6 +12,7 @@ type NewsHandler struct {
 }
 
 func (n *NewsHandler) Get() {
+	n.SetHeader("Access-Control-Allow-Origin", "*")
 	param := &global.NewsRequest{}
 	if err := n.CheckUrlParamBinding(param); err != nil {
 		n.ResponseAsJson(global.RespIllegal(err.Error()))

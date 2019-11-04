@@ -12,6 +12,7 @@ type CategoryHandler struct {
 }
 
 func (c *CategoryHandler) Get() {
+	c.SetHeader("Access-Control-Allow-Origin", "*")
 	data, isFound := redis.Get(global.CATEGORY_REDIS_KEY)
 	if !isFound {
 		result := []global.Category{

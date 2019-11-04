@@ -12,6 +12,7 @@ type CityHandler struct {
 }
 
 func (c *CityHandler) Get() {
+	c.SetHeader("Access-Control-Allow-Origin", "*")
 	data, isFound := redis.Get(global.CITY_REDIS_KEY)
 	if !isFound {
 		result := []global.City{
