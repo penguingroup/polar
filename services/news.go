@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/karldoenitz/Tigo/logger"
-	"github.com/olivere/elastic"
+	"github.com/olivere/elastic/v7"
 	"polar/global/config"
 	"polar/models"
 )
@@ -30,7 +30,11 @@ func GetNews(city string, category string, page int64, size int64) (result []mod
 	if count > 0 {
 		for _, hit := range searchResult.Hits.Hits {
 			var news models.News
-			err := json.Unmarshal(hit.Source, &news)
+			byteData, e := hit.Source.MarshalJSON()
+			if e != nil {
+				logger.Error.Println(e.Error())
+			}
+			err := json.Unmarshal(byteData, &news)
 			if err != nil {
 				logger.Error.Println(err.Error())
 				continue

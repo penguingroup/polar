@@ -3,8 +3,8 @@ package config
 import (
 	"fmt"
 	"github.com/karldoenitz/Tigo/logger"
-	"github.com/olivere/elastic"
-	"github.com/olivere/elastic/config"
+	"github.com/olivere/elastic/v7"
+	"github.com/olivere/elastic/v7/config"
 	"github.com/spf13/viper"
 	"os"
 )
