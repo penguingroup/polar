@@ -46,6 +46,7 @@ func initES() {
 		URL: addr,
 	})
 	if err != nil {
+		logger.Error.Printf("init es[address => %s] client failed => (%s)", addr, err.Error())
 		panic(err)
 	}
 	esClient = client

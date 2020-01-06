@@ -1,10 +1,10 @@
 dev:
   redis:
-    ip: 127.0.0.1
+    ip: host.docker.internal
     port: 6379
     maxidle: 3     # 空闲进程数
     timeout: 100   # 超时时间
-    auth:
+    auth: 123456
     select: 1
   es:
     ip: host.docker.internal
